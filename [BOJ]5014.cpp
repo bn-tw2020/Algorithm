@@ -6,13 +6,11 @@ int visited[1000004];
 queue<int> q;
 int main(){
     cin>>f>>s>>g>>u>>d;
+    
     fill(visited, visited+1000004, 0);
     q.push(s);
     visited[s]=1;
-    if(s==g){
-      cout<<0<<'\n';
-      return 0;
-    }
+    
     while(q.size()){
         int here = q.front(); q.pop();
 
@@ -29,6 +27,7 @@ int main(){
             visited[here-d] = visited[here] + 1;
         }
       }
+    
     cout<<"use the stairs"<<'\n';
     return 0;
     }
